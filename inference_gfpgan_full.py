@@ -9,7 +9,7 @@ from torchvision.transforms.functional import normalize
 
 from archs.gfpganv1_arch import GFPGANv1
 from basicsr.utils import img2tensor, imwrite, tensor2img
-from matplotlib.pyplot as plt 
+import matplotlib.pyplot as plt 
 
 
 def restoration(gfpgan,
