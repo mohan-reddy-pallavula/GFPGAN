@@ -48,7 +48,7 @@ def restoration(gfpgan,
         cropped_face_t = cropped_face_t.unsqueeze(0).to('cuda')
         print(22222)
         print(type(cropped_face_t))
-        plt.imshow(cropped_face_t))
+        plt.imshow(cropped_face_t)
         plt.show()
         try:
             with torch.no_grad():
