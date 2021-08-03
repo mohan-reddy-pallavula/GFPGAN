@@ -43,7 +43,7 @@ def restoration(gfpgan,
         # prepare data
         print(11111)
         print(type(idx),type(cropped_face))
-        plt.imshow(cropped_face_t)
+        plt.imshow(cropped_face)
         plt.show()
         cropped_face_t = img2tensor(cropped_face / 255., bgr2rgb=True, float32=True)
         normalize(cropped_face_t, (0.5, 0.5, 0.5), (0.5, 0.5, 0.5), inplace=True)
