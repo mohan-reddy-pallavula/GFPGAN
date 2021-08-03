@@ -43,13 +43,14 @@ def restoration(gfpgan,
         # prepare data
         print(11111)
         print(type(idx),type(cropped_face))
+        plt.imshow(cropped_face_t)
+        plt.show()
         cropped_face_t = img2tensor(cropped_face / 255., bgr2rgb=True, float32=True)
         normalize(cropped_face_t, (0.5, 0.5, 0.5), (0.5, 0.5, 0.5), inplace=True)
         cropped_face_t = cropped_face_t.unsqueeze(0).to('cuda')
         print(22222)
         print(type(cropped_face_t))
-        plt.imshow(cropped_face_t)
-        plt.show()
+
         try:
             with torch.no_grad():
                 output = gfpgan(cropped_face_t, return_rgb=False)[0]
