@@ -30,13 +30,6 @@ def restoration(gfpgan,
     if has_aligned:
         input_img = cv2.resize(input_img, (512, 512))
         face_helper.cropped_faces = [input_img]
-    else:
-        face_helper.read_image(input_img)
-        # get face landmarks for each face
-        face_helper.get_face_landmarks_5(only_center_face=only_center_face, pad_blur=False)
-        # align and warp each face
-        save_crop_path = os.path.join(save_root, 'cropped_faces', img_name)
-        face_helper.align_warp_face(save_crop_path)
 
     # face restoration
     for idx, cropped_face in enumerate(face_helper.cropped_faces):
